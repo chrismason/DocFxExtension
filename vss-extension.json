@@ -1,0 +1,63 @@
+{
+    "manifestVersion": 1,
+    "version": "0.4.1",
+    "id": "vsts-docfxtasks",
+    "publisher": "chrismason",
+    "name": "DocFx Build Tasks",
+    "public": false,
+    "description": "Tasks for generating DocFx documentation for your projects.",
+    "tags": [
+        "Extension",
+        "Marketplace",
+        "DocFx",
+        "Publish",
+        "DevOps",
+        "Build"
+    ],
+    "icons": {
+        "default": "marketplace/images/logo.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "scopes": [
+        "vso.build_execute"
+    ],
+    "branding": {
+        "theme": "dark",
+        "color": "rgb(56,83,97)"
+    },
+    "categories": [
+        "Build and release"
+    ],
+    "content": {
+        "details": {
+            "path": "marketplace/overview.md"
+        },
+        "license": {
+            "path": "marketplace/license.txt"
+        }
+    },
+    "files": [
+        {
+            "path": "Tasks"
+        },
+        {
+            "path": "images"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "docfx-extension-build-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Tasks/DocFxTask"
+            }
+        }
+    ]
+}

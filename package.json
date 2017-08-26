@@ -1,0 +1,34 @@
+{
+    "name": "docfxtasks",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "license": "MIT",
+    "private": true,
+    "author": "",
+    "scripts": {
+        "postinstall": "node scripts/setupBuild",
+        "build": "npm run build:tasks",
+        "build:tasks": "npm run clean && npm run build:tasks:noclean",
+        "build:tasks:noclean": "npm run compile:tasks && npm run content:tasks && npm run content:extension:tasks",
+        "clean": "rimraf dist && npm run clean:tasks",
+        "clean:tasks": "rimraf Tasks/DocFxTask/tools/doc*",
+        "compile:tasks": "tsc --project ./Tasks",
+        "postcompile:tasks": "npm run lint:tasks",
+        "content:tasks": "npm run content:tasks:scripts && npm run content:tasks:node && npm run content:tasks:tools",
+        "content:tasks:scripts": "copyfiles \"./Tasks/*Task*/**/!(*.ts)\" dist",
+        "content:tasks:node": "copyfiles \"./Tasks/*Task*/**/node_modules/**/*\" dist",
+        "content:tasks:tools": "copyfiles \"./Tasks/*Task*/**/tools/*\" dist",
+        "content:extension:tasks": "copyfiles vss-extension.json marketplace/**/* images/**/* dist",
+        "lint:tasks": "tslint -c tslint.json \"Tasks/!(@types)/*.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^7.0.8",
+        "copyfiles": "^1.2.0",
+        "q": "^1.5.0",
+        "rimraf": "^2.6.1",
+        "tfx-cli": "^0.4.9",
+        "tslint": "^5.7.0",
+        "typescript": "^2.3.4"
+    }
+}

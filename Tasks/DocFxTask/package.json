@@ -1,0 +1,12 @@
+{
+    "name": "vsts-docfxtasks-docfxtask",
+    "version": "1.0.0",
+    "description": "A VSTS build task for running DocFx on a build agent",
+    "main": "docfx.js",
+    "author": "Chris Mason",
+    "private": true,
+    "license": "MIT",
+    "dependencies": {
+        "vsts-task-lib": "~2.0.7"
+    }
+}

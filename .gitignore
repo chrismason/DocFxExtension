@@ -1,0 +1,14 @@
+dist/
+built/
+
+node_modules/
+npm-debug.log
+
+Tasks/**/*.js
+Tasks/**/*.js.map
+Tasks/**/tools/*
+!Tasks/**/tools/nuget.exe
+
+*.vsix
+
+.taskkey
