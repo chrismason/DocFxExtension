@@ -40,6 +40,10 @@
             "path": "marketplace/license.txt"
         }
     },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/masonch/DocFxExtension"
+    },
     "files": [
         {
             "path": "Tasks"
